@@ -59,7 +59,7 @@ themeFabEl.addEventListener('click', theme.toggle);
 // -------------------------------------------------------------------------
 
 const splash   = createSplashController(splashEl, splashImgEl);
-const imageUrl = selectSplashImage(TARGET, new Date(), import.meta.env.BASE_URL ?? '/');
+const imageUrl = selectSplashImage(TARGET, new Date(), import.meta.env?.BASE_URL ?? '/');
 
 splash.mount(imageUrl);
 splash.dismiss(SPLASH_VISIBLE_MS);
