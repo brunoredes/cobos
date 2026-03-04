@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="COBOS — Em breve" />
+    <title>COBOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,700;0,14..32,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--
+      Splash: purely decorative, aria-hidden from the accessibility tree.
+      Screen readers access <main> directly without being blocked.
+    -->
+    <div class="splash" id="splash" aria-hidden="true">
+      <img
+        class="splash__image"
+        id="splash-image"
+        src=""
+        alt=""
+        role="presentation"
+        width="400"
+        height="200"
+      />
+    </div>
+
+    <main class="main" id="main">
+      <!--
+        Visually hidden live region: announces the countdown summary
+        to screen readers once per minute, not every second.
+      -->
+      <p class="visually-hidden" aria-live="polite" aria-atomic="true" id="sr-announce"></p>
+
+      <p class="target-date" id="target-date" aria-label="Data de lançamento"></p>
+
+      <time
+        class="countdown"
+        id="countdown"
+        datetime="2026-03-10T11:00:00.000Z"
+        aria-label="Contagem regressiva para o lançamento"
+      >
+        <span class="countdown__segment">
+          <span class="countdown__value" id="days" aria-label="dias">00</span>
+          <span class="countdown__label" aria-hidden="true">Dias</span>
+        </span>
+        <span class="countdown__separator" aria-hidden="true">:</span>
+        <span class="countdown__segment">
+          <span class="countdown__value" id="hours" aria-label="horas">00</span>
+          <span class="countdown__label" aria-hidden="true">Horas</span>
+        </span>
+        <span class="countdown__separator" aria-hidden="true">:</span>
+        <span class="countdown__segment">
+          <span class="countdown__value" id="minutes" aria-label="minutos">00</span>
+          <span class="countdown__label" aria-hidden="true">Minutos</span>
+        </span>
+        <span class="countdown__separator" aria-hidden="true">:</span>
+        <span class="countdown__segment">
+          <span class="countdown__value" id="seconds" aria-label="segundos">00</span>
+          <span class="countdown__label" aria-hidden="true">Segundos</span>
+        </span>
+      </time>
+
+      <p class="brand">COBOS</p>
+      <!--
+        Theme toggle FAB.
+        Uses a native <button> — no ARIA role needed.
+        aria-label updated by JS to reflect the action it will perform.
+      -->
+      <button
+        class="theme-fab"
+        id="theme-fab"
+        type="button"
+        aria-label="Mudar para tema claro"
+      ></button>
+    </main>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
