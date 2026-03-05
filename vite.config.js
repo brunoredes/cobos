@@ -24,7 +24,7 @@ import zlib              from 'node:zlib';
 // ---------------------------------------------------------------------------
 const resolveBase = () => {
   const repo = process.env.GITHUB_REPOSITORY;
-  if (!repo) return '/';
+  if (!repo) return './';
   const [, name] = repo.split('/');
   return `/${name}/`;
 };
